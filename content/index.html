@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo Profissional | Max Ferreira</title>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    h1, h2, h3 {
+      color: #0f4c5c;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #0f4c5c;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .erro {
+      color: #b00020;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div id="conteudo">Carregando currículo...</div>
+  </main>
+
+  <script>
+    const md = window.markdownit({
+      html: true,
+      linkify: true,
+      typographer: true
+    });
+
+    fetch('./curriculo.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Não foi possível carregar o arquivo curriculo.md');
+        }
+        return response.text();
+      })
+      .then(markdown => {
+        document.getElementById('conteudo').innerHTML = md.render(markdown);
+      })
+      .catch(error => {
+        document.getElementById('conteudo').innerHTML =
+          '<p class="erro">Erro ao carregar o currículo.</p><p>' + error.message + '</p>';
+      });
+  </script>
+</body>
+</html>
