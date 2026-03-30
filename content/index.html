@@ -5,50 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Currículo Profissional | Max Ferreira</title>
   <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #f5f3ef;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #0f766e;
+      --border: #e5e7eb;
+      --code-bg: #f3f4f6;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 40px 20px;
-      background: #f7f7f7;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
     }
 
     .container {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    h1, h2, h3 {
-      color: #0f4c5c;
+    .markdown-body {
+      background: var(--surface);
+      padding: 48px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
     }
 
-    ul {
-      padding-left: 20px;
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4 {
+      color: var(--text);
+      line-height: 1.2;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
-    a {
-      color: #0f4c5c;
+    .markdown-body h1 {
+      font-size: 2.4rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-top: 0;
+    }
+
+    .markdown-body h2 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.2rem;
+    }
+
+    .markdown-body p {
+      margin: 0 0 1rem;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      margin: 0 0 1.25rem 1.25rem;
+    }
+
+    .markdown-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .markdown-body a {
+      color: var(--primary);
       text-decoration: none;
+      font-weight: 500;
     }
 
-    a:hover {
+    .markdown-body a:hover {
       text-decoration: underline;
     }
 
+    .markdown-body strong {
+      font-weight: 700;
+    }
+
+    .markdown-body code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
+    .markdown-body pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 1rem;
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+
+    .markdown-body pre code {
+      background: transparent;
+      padding: 0;
+    }
+
     .erro {
-      color: #b00020;
-      font-weight: bold;
+      color: #b91c1c;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .markdown-body {
+        padding: 24px;
+      }
+
+      .markdown-body h1 {
+        font-size: 2rem;
+      }
+
+      .markdown-body h2 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <div id="conteudo">Carregando currículo...</div>
+    <article id="conteudo" class="markdown-body">Carregando currículo...</article>
   </main>
 
   <script>
