@@ -1,23 +1,10 @@
 # Currículo Profissional
 
 ## Perfil
-Profissional de **Data Analytics** e **Business Intelligence** com experiência em BigQuery, Power BI e SQL.
+Profissional de Data Analytics e Business Intelligence com experiência em BigQuery, Power BI, SQL, GA4 e Data Visualization. Atuo na transformação de dados em insights para performance, eficiência operacional e suporte à decisão.
 
 ## Competências Técnicas
-- **BigQuery** - Consultas avançadas e unnesting
-- **Power BI** - Dashboards e KPIs
-- **SQL** - Otimização de queries
-- **Google Analytics 4** - Integração com GA4
-
-## Experiência Profissional
-### Analista de Dados - Empresa X (2020-2026)
-- Desenvolvimento de dashboards executivos
-- Automação de relatórios com BigQuery
-- Análise de performance e KPIs
-
-### Analista de BI - Empresa Y (2018-2020)
-- Modelagem de dados e ETL
-- Suporte à tomada de decisão
-
-## Formação
-**Bacharelado em [sua área]** - Universidade XYZ
+- BigQuery e SQL para análise, modelagem e otimização de consultas
+- Power BI para dashboards executivos, KPIs e storytelling analítico
+- GA4 e Web Analytics para mensuração de jornada e conversão
+- ETL, automação de relatórios e organização de bases analíticas
