@@ -5,7 +5,7 @@
 - **Telefone:** +55 11 96830-9134
 - **E-mail:** max@ferreira.pro.br
 - **LinkedIn:** www.linkedin.com/in/maximilianoferreira
-- **Blog:** https://ferreiraprobr.vercel.app
+- **Blog:** https://ferreiraprobr.substack.com
 
 ## Perfil
 Profissional sênior em **Web Analytics**, **Marketing Intelligence** e **Digital Performance**, com mais de 15 anos de experiência em dados de marketing, performance digital e comportamento do usuário. Atuação em projetos de mensuração, tracking, BI, CRM, privacidade, padronização de métricas, leitura de funis e geração de insights para apoiar decisões de negócio.
