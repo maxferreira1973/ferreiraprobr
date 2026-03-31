@@ -330,20 +330,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
   window.dataLayer = window.dataLayer || [];
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const btnExportar = document.querySelector('.btn-exportar');
-
-    if (btnExportar) {
-      btnExportar.addEventListener('click', function () {
-        window.dataLayer.push({
-          event: 'exportar_pdf_click',
-          button_text: 'Exportar PDF',
-          page_path: window.location.pathname,
-          page_title: document.title
-        });
-      });
-    }
+  document.querySelector('.btn-exportar').addEventListener('click', () => {
+  window.dataLayer.push({
+    event: 'exportar_pdf_click',
+    button_text: 'Exportar PDF',  // Valor fixo ou dinâmico
+    page_path: window.location.pathname,
+    page_title: document.title
   });
+});
 </script>
 </body>
 </html>
