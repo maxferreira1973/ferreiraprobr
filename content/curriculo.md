@@ -4,105 +4,106 @@
 - **Endereço:** Rua José Getúlio, 67 ap 125, Liberdade, São Paulo - SP, 01509-001
 - **Telefone:** +55 11 96830-9134
 - **E-mail:** max@ferreira.pro.br
-- **LinkedIn:** www.linkedin.com/in/maximilianoferreira
+- **LinkedIn:** https://www.linkedin.com/in/maximilianoferreira
+- **Site pessoal:** https://ferreiraprobr.vercel.app
 - **Blog:** https://ferreiraprobr.substack.com
 
 ## Perfil
-Profissional sênior em **Web Analytics**, **Marketing Intelligence** e **Digital Performance**, com mais de 15 anos de experiência em dados de marketing, performance digital e comportamento do usuário. Atuação em projetos de mensuração, tracking, BI, CRM, privacidade, padronização de métricas, leitura de funis e geração de insights para apoiar decisões de negócio.
+Profissional sênior em **Web Analytics**, **GA4**, **GTM**, **Marketing Intelligence**, **Digital Performance**, **Martech** e **Growth**. Ao longo de 36 anos de carreira, atuou em educação, suporte técnico, e-mail marketing, Business Intelligence para mídia online e, mais recentemente, em mensuração digital, governança de dados, tracking, dashboards executivos e apoio à tomada de decisão. Forte experiência com **GA4**, **GTM**, **Consent Mode**, **Power BI** e **Looker Studio**, apoiando times de marketing, produto e BI.
 
-## Competências Técnicas
-- **Digital Analytics**
-- **Data Strategy**
-- **Business Intelligence**
-- **Power BI**
-- **Google Analytics 4**
-- **Google Tag Manager**
-- **Looker Studio**
-- **SQL**
-- **BigQuery**
-- **Governança de Dados**
-- **Consent Mode**
-- **Mensuração de Performance**
-- **Dashboards Executivos**
-- **Tracking e implementação**
-- **E-mail Marketing Analytics**
+## Principais Competências
+- Digital Analytics
+- Gestão de produtos
+- Data Strategy
+- Google Analytics 4 (GA4)
+- Google Tag Manager (GTM)
+- Power BI
+- Looker Studio
+- Consent Mode
+- Martech
+- Growth Marketing
 
 ## Experiência Profissional
 
-### Consultor / Especialista em BI - AlmapBBDO
-**Janeiro de 2025 - Março de 2026 · São Paulo, Brasil**
-
-Projeto voltado à consolidação e análise de dados de mídia e performance para contas do grupo Accor por tempo determinado.
-
-- Consolidação de dados multicanal em relatórios integrados e executivos.
-- Desenvolvimento de dashboards para apoiar decisões táticas e estratégicas de mídia.
-- Análise de indicadores como ROAS e CPA para otimização de investimentos.
-- Padronização de métricas e processos analíticos entre contas e canais.
-- Apoio aos times na leitura e uso dos dashboards no dia a dia.
-- Ferramentas utilizadas: **Power BI, Supermetrics, GA4, Google Ads, Meta Ads e LinkedIn Ads**.
-
-### Consultor / Especialista em Web Analytics - Acceleration, now Choreograph
-**Dezembro de 2023 - Dezembro de 2024 · Lisboa**
+### choreograph
+**Especialista em Web Analytics e Martech**  
+**dezembro de 2023 - março de 2026 · Lisboa**
 
 Atuação em governança de dados, consentimento e padronização de tracking em ambientes multinacionais.
 
-- Estruturação de políticas de coleta alinhadas às normas de privacidade.
-- Desenvolvimento de fluxos de tracking em GA4 e GTM.
-- Redução de discrepâncias entre plataformas por meio de auditorias técnicas.
-- Atuação como ponte entre mídia, BI e engenharia de dados.
-- Automação de relatórios de performance e consentimento.
-- Implementação de funis de conversão com melhora de acuracidade e aumento das taxas de conversão em mais de 30%.
-- Ferramentas utilizadas: **GA4, GTM, Power BI, Consent Mode e Looker Studio**.
+- Estruturei políticas de coleta alinhadas às normas de privacidade.
+- Desenvolvi fluxos de tracking no GA4 e GTM.
+- Reduzi discrepâncias entre plataformas por meio de auditorias técnicas.
+- Atuei como ponte entre mídia, BI e engenharia de dados.
+- Automatizei relatórios de performance e consentimento.
+- Implementei funis de conversão que permitiram melhorar a acuracidade e aumentar as taxas de conversão em mais de 30%.
+- Consolidei dados multicanal em relatórios integrados e executivos.
+- Desenvolvi dashboards para apoiar decisões táticas e estratégicas de mídia.
+- Analisei indicadores como ROAS e CPA para otimização de investimentos.
+- Padronizei métricas e processos analíticos entre contas e canais.
+- Apoiei os times na leitura e uso dos dashboards no dia a dia.
+- **Ferramentas:** Power BI, Supermetrics, GA4, Google Ads, Meta Ads, LinkedIn Ads, GTM, Consent Mode e Looker Studio.
 
-### Supervisor de Data Intelligence - DAVID São Paulo
-**Julho de 2022 - Dezembro de 2022 · São Paulo, Brasil**
+### DAVID São Paulo
+**Supervisor de Data Intelligence**  
+**julho de 2022 - dezembro de 2023 · São Paulo, Brasil**
 
-- Estruturação e organização do squad de Data Intelligence.
-- Apoio à leitura de resultados de campanhas de performance e branding.
-- Organização de processos, demandas e rotinas analíticas.
+- Estruturei e organizei o squad de Data Intelligence.
+- Apoiei a leitura de resultados de campanhas de performance e branding.
+- Organizei processos, demandas e rotinas analíticas.
 
-### Especialista em Data Intelligence - DAVID São Paulo
-**Janeiro de 2022 - Julho de 2022 · São Paulo, Brasil**
+**Especialista em Data Intelligence**  
+**janeiro de 2022 - julho de 2022 · São Paulo, Brasil**
 
-- Desenvolvimento de relatórios de performance e awareness.
-- Consolidação de dados de mídia em dashboards executivos.
-- Aplicação de storytelling analítico para apoiar decisões de marketing.
+- Desenvolvi relatórios de performance e awareness.
+- Consolidei dados de mídia em dashboards executivos.
+- Apliquei storytelling analítico para apoiar decisões de marketing.
 
-### Consultor em Web Analytics - Maximiliano de Jesus Ferreira Serviços - EI
-**Outubro de 2015 - Dezembro de 2021 · São Paulo, Brasil**
+### Maximiliano de Jesus Ferreira Serviços - EI
+**Consultor em Business Intelligence para Mídia Online**  
+**outubro de 2015 - dezembro de 2021 · São Paulo, Brasil**
 
-- Estruturação de áreas de BI e Web Analytics em agências e clientes corporativos.
-- Implementação de Google Analytics e Google Tag Manager com foco em qualidade de coleta e leitura de funis.
-- Desenvolvimento de dashboards e relatórios orientados a negócio.
-- Capacitação de equipes na leitura e uso estratégico dos dados.
+- Estruturei áreas de BI e Web Analytics em agências e clientes corporativos.
+- Implementei GA e GTM com foco em qualidade de coleta e leitura de funis.
+- Desenvolvi dashboards e relatórios orientados a negócio.
+- Capacitei equipes na leitura e uso estratégico dos dados.
 
-### Consultor em E-mail Marketing - Maximiliano de Jesus Ferreira Serviços - Autônomo
-**Novembro de 2009 - Setembro de 2015 · São Paulo, Brasil**
+### AG2 - Agência de Inteligência Digital S.A.
+**Especialista em marketing por e-mail**  
+**abril de 2007 - setembro de 2015 · São Paulo, SP**
 
-- Planejamento e execução de campanhas de e-mail marketing.
-- Estruturação de segmentações e automações baseadas em comportamento.
-- Análise de métricas de engajamento, conversão e retenção.
-- Desenvolvimento de relatórios de performance e funil.
+- Atuei na gestão de campanhas de e-mail marketing e na normalização de peças HTML conforme boas práticas de entregabilidade em ISPs.
+- Desenvolvi réguas de relacionamento a partir de ações de mídia para captação e nutrição de leads em jornadas de usuário.
+- Aumentei em 30% a taxa de abertura de e-mails da Embraer ao equilibrar a proporção entre texto e imagem nas peças em HTML.
+- Incrementei em 15% a taxa de cliques da Liderança Capitalização ao adaptar linhas de assunto.
+- Realizei o clean up da base antes dos disparos, contribuindo para melhoria de 10% na taxa de entrega das campanhas.
 
-### E-mail Marketing Specialist - AG2
-**Março de 2007 - Outubro de 2009 · São Paulo, Brasil**
+### Locaweb
+**Analista de Suporte Técnico Nível II (NOC)**  
+**maio de 2006 - março de 2007 · São Paulo, SP**
 
-- Execução de campanhas para grandes marcas.
-- Análise de métricas de abertura, clique e conversão.
-- Produção de relatórios e recomendações de otimização.
+- Atuei no monitoramento de servidores Windows (2000/2003) e Linux Red Hat.
+- Identifiquei problemas de performance em servidores Windows, otimizei configurações e prestei suporte nível 2.
+- Atuei no controle de filas de e-mails e na validação de processos de backup dos servidores.
 
-### Analista Antispam - Locaweb
-**Fevereiro de 2006 - Março de 2007 · São Paulo, Brasil**
+**Analista Anti Spam**  
+**outubro de 2005 - abril de 2006 · São Paulo, SP**
 
-- Monitoramento de reputação de IPs e qualidade de envio.
-- Produção de relatórios técnicos de performance e disponibilidade.
-- Atuação com governança, segurança e mitigação de riscos.
+- Atuei na preservação da reputação da infraestrutura de IPs para envio de e-mails em massa.
+- Trabalhei para evitar bloqueios por organismos anti-spam e preservar a entregabilidade para destinatários legítimos.
 
-### Analista de Suporte - Locaweb
-**Fevereiro de 2005 - Fevereiro de 2006 · São Paulo, Brasil**
+**Analista de suporte técnico**  
+**janeiro de 2005 - setembro de 2005 · São Paulo, SP**
 
-- Atendimento a incidentes técnicos e análise de dados operacionais.
-- Monitoramento de serviços e qualidade de entrega.
+- Atuei no atendimento a clientes via telefone, chat e help desk.
+- Prestei suporte técnico nível I para serviços como hospedagem de sites, e-mail e FTP.
+
+### Escolas Particulares de Ensino Fundamental, Médio, Técnico e Cursos Livres
+**Professor**  
+**janeiro de 1990 - dezembro de 2004 · Santos, SP**
+
+- Atuei na docência de cursos livres de informática, ensinando Microsoft Office (Word, Excel, PowerPoint e Access).
+- Lecionei disciplinas do Ensino Fundamental, Médio e Técnico, como Lógica de Programação, Linguagens de Programação (Visual Basic, Delphi e Pascal) e Fundamentos de Informática.
 
 ## Formação Acadêmica
 
@@ -122,8 +123,7 @@ Fevereiro de 2013 - Junho de 2013.
 - Métricas Digitais e Web Analytics
 - Media Intelligence
 - Central de Recursos de Privacidade
-- Certificação do Google Analytics
 
 ## Idiomas
 - **Português**
-- **Inglês** - Full Professional
+- **Inglês** — Full Professional
