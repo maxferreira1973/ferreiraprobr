@@ -5,7 +5,7 @@
 - **Telefone:** +55 11 96830-9134
 - **E-mail:** max@ferreira.pro.br
 - **LinkedIn:** https://www.linkedin.com/in/maximilianoferreira
-- **Site pessoal:** https://ferreiraprobr.vercel.app
+- **Site pessoal:** https://www.ferreira.pro.br
 - **Blog:** https://ferreiraprobr.substack.com
 
 ## Perfil
