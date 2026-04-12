@@ -9,7 +9,13 @@
 - **Blog:** https://ferreiraprobr.substack.com
 
 ## Perfil
-Profissional sênior em **Web Analytics**, **GA4**, **GTM**, **Marketing Intelligence**, **Digital Performance**, **Martech** e **Growth**. Ao longo de 36 anos de carreira, atuou em educação, suporte técnico, e-mail marketing, Business Intelligence para mídia online e, mais recentemente, em mensuração digital, governança de dados, tracking, dashboards executivos e apoio à tomada de decisão. Forte experiência com **GA4**, **GTM**, **Consent Mode**, **Power BI** e **Looker Studio**, apoiando times de marketing, produto e BI.
+**Senior Web Analytics & Marketing Intelligence | GA4 | GTM | BI de Mídia | Instrutor de TI Certificado | 36 anos de Experiência Técnica + Pedagógica**
+
+**Analytics Sênior (15+ anos recentes):** Líder em Web Analytics e BI de Mídia (choreograph, DAVID). Governança de dados, GA4/GTM, dashboards Power BI com +30% conversão. Stack: Consent Mode, Supermetrics, BigQuery.
+
+**Educador Técnico (16 anos + formação contínua):** Professor/Instrutor de Informática (Ensino Fundamental/Médio/Técnico/Cursos Livres, 1990-2004). Especialista em didática para lógica de programação, MS Office, Visual Basic/Delphi/Pascal. **Hoje:** Capacitação de equipes em GA4/GTM/Power BI.
+
+**Diferencial único:** Conecto **dados avançados** com **ensino prático** — ideal para **Lead Analytics**, **Instrutor TI Sênior** ou **Consultor Martech/Educação Tech**.
 
 ## Principais Competências
 - Digital Analytics
