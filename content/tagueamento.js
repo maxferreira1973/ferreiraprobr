@@ -1,18 +1,39 @@
-// 1. Garante que o objeto dataLayer exista globalmente no navegador
+// ==========================================
+// 1. INICIALIZAÇÃO PADRÃO DO GA4
+// ==========================================
 window.dataLayer = window.dataLayer || [];
 
-// 2. Define a função de atalho 'gtag' para enviar dados ao GA4
 function gtag(){
     window.dataLayer.push(arguments);
 }
 
-// 3. Inicializa a biblioteca registrando o horário atual do disparo
 gtag('js', new Date());
+gtag('config', 'G-723EDXBFFS');
 
-// 4. Executa a linha de comando de configuração que dispara o Pageview
-// Substitua o 'G-XXXXXXXXXX' pelo ID real da sua tag de fluxo do GA4
-gtag('config', 'G-723EDXBFFS', {
-    'page_title': document.title,            // Captura o título da página automaticamente
-    'page_path': window.location.pathname,    // Captura o caminho (ex: /curriculo)
-    'page_location': window.location.href     // Captura a URL completa
+
+// ==========================================
+// 2. RASTREAMENTO DO CLIQUE (EVENTO PERSONALIZADO)
+// ==========================================
+
+// Usamos o 'DOMContentLoaded' para garantir que o código só vai procurar 
+// o botão DEPOIS que todo o HTML da página estiver carregado.
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Procura o botão pelo ID que você definiu no seu HTML (ex: id="btn-download")
+    const botaoDownload = document.getElementById('exportPdfBtn');
+    
+    // Verifica se o botão realmente existe na página atual antes de aplicar o evento
+    if (botaoDownload) {
+        botaoDownload.addEventListener('click', function() {
+            
+            // Dispara o evento personalizado para o GA4 via dataLayer
+            gtag('event', 'download_curriculo', {
+                'formato_arquivo': 'PDF',
+                'nome_arquivo': 'curriculo_max.pdf',
+                'local_clique': 'menu_superior'
+            });
+            
+            console.log('Evento de download enviado para o GA4!');
+        });
+    }
 });
