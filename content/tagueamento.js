@@ -7,6 +7,12 @@ function gtag(){
     window.dataLayer.push(arguments);
 }
 
+// Adicione o parâmetro 'debug_mode': true dentro do seu config
+gtag('config', 'G-723EDXBFFS', {
+    'debug_mode': true,
+    'page_title': document.title
+});
+
 gtag('js', new Date());
 gtag('config', 'G-723EDXBFFS');
 
