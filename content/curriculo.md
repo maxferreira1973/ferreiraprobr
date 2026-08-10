@@ -31,6 +31,22 @@
 
 ## Experiência Profissional
 
+### Sorte Online
+**Analista Web Analytics III**  
+**maio de 2026 - até o momento · São Paulo**
+
+Atuação em governança de dados e padronização de tracking em ambientes multinacionais.
+
+- Estruturei políticas de coleta alinhadas às normas de privacidade.
+- Desenvolvi fluxos de tracking no GA4 e GTM.
+- Reduzi discrepâncias entre plataformas (GA4 e Full Story)
+- Atuei como ponte entre mídia, BI e engenharia de dados.
+- Implementei funis de conversão que permitiram melhorar a acuracidade e aumentar as taxas de conversão em mais de 15% para compras de bolão de loterias e apostas individuais (Faça Seu Jogo).
+- Consolidei dados multicanal em relatórios integrados e executivos.
+- Analisei indicadores como ROAS e CPA para otimização de investimentos.
+- Participei das reuniões iniciais para implementação do MMM (Marketing Mix Modeling) com nosso atual fornecedor de GA360
+- **Ferramentas:** Power BI, Supermetrics, GA4, Google Ads, Meta Ads, LinkedIn Ads, GTM, Consent Mode e Looker Studio.
+
 ### choreograph
 **Especialista em Web Analytics e Martech**  
 **dezembro de 2023 - março de 2026 · Lisboa**
