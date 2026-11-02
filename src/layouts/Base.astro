@@ -11,6 +11,11 @@ interface Props {
 
 const { titulo = SITE.titulo, descricao = SITE.descricao } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const secao = Astro.url.pathname.startsWith('/artigos')
+  ? 'artigos'
+  : Astro.url.pathname === '/'
+    ? 'curriculo'
+    : '';
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -86,6 +91,15 @@ const canonical = new URL(Astro.url.pathname, SITE.url).href;
         width="0"
         style="display:none;visibility:hidden"></iframe>
     </noscript>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="/" class="site-nome">Maximiliano Ferreira</a>
+      <span class="site-links">
+        <a href="/" aria-current={secao === 'curriculo' ? 'page' : undefined}>Currículo</a>
+        <a href="/artigos" aria-current={secao === 'artigos' ? 'page' : undefined}>Artigos</a>
+      </span>
+    </nav>
+
     <slot />
 
     <footer class="rodape">

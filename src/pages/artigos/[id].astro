@@ -1,0 +1,85 @@
+---
+// Página de cada artigo (rota /artigos/<id>, onde <id> é o nome do arquivo .md).
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { artigosPublicados, formatarData, tempoDeLeitura, type Artigo } from '../../lib/artigos';
+
+export async function getStaticPaths() {
+  const artigos = await artigosPublicados();
+  return artigos.map((artigo) => ({ params: { id: artigo.id }, props: { artigo } }));
+}
+
+const { artigo } = Astro.props as { artigo: Artigo };
+const { Content } = await render(artigo);
+const { titulo, resumo, data, linkedin, fonte, tags } = artigo.data;
+const tagPrincipal = tags[0] ?? '';
+---
+<Base titulo={`${titulo} | Maximiliano Ferreira`} descricao={resumo}>
+  <main class="container">
+    <article class="markdown-body artigo" data-artigo-slug={artigo.id} data-artigo-tag={tagPrincipal}>
+      <p class="artigo-meta">
+        <a href="/artigos">← Artigos</a>
+        {' · '}
+        <time datetime={data.toISOString().slice(0, 10)}>{formatarData(data)}</time>
+        {' · '}
+        {tempoDeLeitura(artigo.body)} min de leitura
+      </p>
+
+      <h1>{titulo}</h1>
+
+      <Content />
+
+      {
+        fonte && (
+          <p class="artigo-fonte">
+            Artigo comentado: <a href={fonte.url} rel="noopener">{fonte.titulo}</a>, de {fonte.autor}
+            {fonte.idioma === 'en' ? ' (em inglês)' : ''}.
+          </p>
+        )
+      }
+
+      <p class="artigo-origem">
+        Publicado originalmente no
+        <a href={linkedin} rel="noopener" data-artigo-linkedin>LinkedIn</a>.
+      </p>
+
+      <p class="artigo-tags">
+        {tags.map((tag) => <span class="tag">{tag}</span>)}
+      </p>
+    </article>
+  </main>
+
+  <script is:inline>
+    // Eventos de leitura (contrato em docs/data-layer.md).
+    (function () {
+      var artigo = document.querySelector('[data-artigo-slug]');
+      if (!artigo) return;
+      var slug = artigo.getAttribute('data-artigo-slug');
+      var tag = artigo.getAttribute('data-artigo-tag');
+      window.dataLayer = window.dataLayer || [];
+
+      // artigo_ler: leitor chegou a 75% do texto do artigo (uma vez por página).
+      var enviado = false;
+      function verificarLeitura() {
+        if (enviado) return;
+        var r = artigo.getBoundingClientRect();
+        var lido = (window.innerHeight - r.top) / r.height;
+        if (lido >= 0.75) {
+          enviado = true;
+          window.dataLayer.push({ event: 'artigo_ler', artigo_slug: slug, artigo_tag: tag });
+          window.removeEventListener('scroll', verificarLeitura);
+        }
+      }
+      window.addEventListener('scroll', verificarLeitura, { passive: true });
+      verificarLeitura();
+
+      // artigo_linkedin_clicar: clique no link do post original.
+      var link = document.querySelector('[data-artigo-linkedin]');
+      if (link) {
+        link.addEventListener('click', function () {
+          window.dataLayer.push({ event: 'artigo_linkedin_clicar', artigo_slug: slug });
+        });
+      }
+    })();
+  </script>
+</Base>
