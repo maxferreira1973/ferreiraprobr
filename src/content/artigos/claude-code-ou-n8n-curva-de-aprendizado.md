@@ -3,6 +3,7 @@ titulo: "Trocar o n8n pelo Claude Code não elimina a curva de aprendizado"
 resumo: "Ela só fica para quando algo quebrar em produção. Notas sobre um artigo de Himanshu Sharma e três perguntas para fazer antes de migrar."
 data: 2026-10-26
 linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7520439390024949760/"
+typefully: 11473429
 fonte:
   titulo: "Should I use Claude Code instead of n8n for Voice AI?"
   autor: "Himanshu Sharma (Optimize Smart)"

@@ -3,6 +3,7 @@ titulo: "Google Tag Manager e Google Tag finalmente viraram uma coisa só"
 resumo: "O que muda com o novo tagging experience do GTM, a partir da análise de Simo Ahava, e como migrar com segurança."
 data: 2026-10-29
 linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7521526556947533825/"
+typefully: 11473182
 fonte:
   titulo: "Optimized Tagging Experience For Google Tag Manager"
   autor: "Simo Ahava"

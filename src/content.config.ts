@@ -13,6 +13,8 @@ const artigos = defineCollection({
     data: z.coerce.date(),
     // Post original no LinkedIn
     linkedin: z.url(),
+    // ID do rascunho no Typefully (evita sincronizar o mesmo post duas vezes)
+    typefully: z.number().int().optional(),
     // Artigo comentado no post (opcional)
     fonte: z
       .object({
