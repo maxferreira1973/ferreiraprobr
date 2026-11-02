@@ -81,7 +81,12 @@ Implementado em `src/layouts/Base.astro` (padrão) e `src/components/ConsentBann
 
 ## Eventos da seção /artigos
 
-Enviados ao dataLayer por `src/pages/artigos/[id].astro`. **Ainda sem tags no GTM.**
+Enviados ao dataLayer por `src/pages/artigos/[id].astro`.
+
+**Configuração no GTM** (versão 4, "v3 - eventos de artigos"): variáveis `DLV | artigo_slug` e
+`DLV | artigo_tag`; acionadores `CE | artigo_ler` e `CE | artigo_linkedin_clicar`; tags
+`GA4 | artigo_ler` (parâmetros `artigo_slug`, `artigo_tag`) e `GA4 | artigo_linkedin_clicar` (`artigo_slug`).
+No GA4: dimensões personalizadas `artigo_slug` e `artigo_tag` (escopo de evento).
 
 ### `artigo_ler`
 
