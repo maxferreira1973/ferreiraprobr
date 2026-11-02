@@ -1,0 +1,33 @@
+---
+// Página do currículo (rota /).
+// O conteúdo vem de src/data/curriculo.md e é convertido em HTML durante o build,
+// então buscadores, ATS e prévias de link recebem o currículo completo.
+import Base from '../layouts/Base.astro';
+import { Content } from '../data/curriculo.md';
+---
+<Base>
+  <main class="container">
+    <div class="topbar">
+      <button id="exportPdfBtn" class="btn-exportar" type="button">Exportar PDF</button>
+    </div>
+
+    <article id="conteudo" class="markdown-body">
+      <Content />
+    </article>
+  </main>
+
+  <script is:inline>
+    // Exportar PDF = impressão do navegador (o CSS @media print ajusta o layout).
+    // Antes de abrir a impressão, registra o evento de conversão no dataLayer.
+    // Contrato do evento: docs/data-layer.md
+    document.getElementById('exportPdfBtn').addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'curriculo_exportar',
+        metodo: 'impressao',
+        posicao: 'topo',
+      });
+      window.print();
+    });
+  </script>
+</Base>
