@@ -183,9 +183,22 @@ body {
 
 
 /* Navegação principal */
+/* Cabeçalho fixo no topo ao rolar a página (largura total, fundo levemente translúcido) */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  margin: -32px -16px 24px;
+  padding: 12px 16px;
+  background: rgba(245, 243, 239, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
 .site-nav {
   max-width: 960px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -204,7 +217,13 @@ body {
 
 .site-links {
   display: flex;
+  align-items: center;
   gap: 18px;
+}
+
+.btn-cabecalho {
+  padding: 9px 14px;
+  font-size: 0.9rem;
 }
 
 .site-links a {
@@ -423,6 +442,30 @@ a.btn-exportar {
     width: 100%;
   }
 
+  .site-header {
+    margin: -20px -12px 16px;
+    padding: 10px 12px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .site-nome {
+    font-size: 0.9rem;
+  }
+
+  .site-links {
+    gap: 12px;
+  }
+
+  .site-header .btn-cabecalho {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
   .markdown-body {
     padding: 24px;
     border-radius: 14px;
@@ -464,6 +507,7 @@ a.btn-exportar {
   }
 
   .topbar,
+  .site-header,
   .site-nav,
   .rodape,
   .consentimento {

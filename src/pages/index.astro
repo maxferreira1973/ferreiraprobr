@@ -6,11 +6,10 @@ import Base from '../layouts/Base.astro';
 import { Content } from '../data/curriculo.md';
 ---
 <Base>
-  <main class="container">
-    <div class="topbar">
-      <button id="exportPdfBtn" class="btn-exportar" type="button">Exportar PDF</button>
-    </div>
+  <!-- O botão vai para o cabeçalho fixo, então continua à mão durante a rolagem -->
+  <button slot="acoes" id="exportPdfBtn" class="btn-exportar btn-cabecalho" type="button">Exportar PDF</button>
 
+  <main class="container">
     <article id="conteudo" class="markdown-body">
       <Content />
     </article>

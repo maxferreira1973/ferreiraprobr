@@ -92,13 +92,17 @@ const secao = Astro.url.pathname.startsWith('/artigos')
         style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-    <nav class="site-nav" aria-label="Navegação principal">
-      <a href="/" class="site-nome">Maximiliano Ferreira</a>
-      <span class="site-links">
-        <a href="/" aria-current={secao === 'curriculo' ? 'page' : undefined}>Currículo</a>
-        <a href="/artigos" aria-current={secao === 'artigos' ? 'page' : undefined}>Artigos</a>
-      </span>
-    </nav>
+    <!-- Cabeçalho fixo: fica visível ao rolar a página (position: sticky) -->
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="/" class="site-nome">Maximiliano Ferreira</a>
+        <span class="site-links">
+          <a href="/" aria-current={secao === 'curriculo' ? 'page' : undefined}>Currículo</a>
+          <a href="/artigos" aria-current={secao === 'artigos' ? 'page' : undefined}>Artigos</a>
+          <slot name="acoes" />
+        </span>
+      </nav>
+    </header>
 
     <slot />
 
