@@ -27,9 +27,9 @@ window.dataLayer.push({
 
 **Configuração no GTM**
 
-1. Variáveis da camada de dados: `dlv - metodo` e `dlv - posicao`.
-2. Acionador: Evento personalizado `curriculo_exportar`.
-3. Tag: Evento do GA4 `curriculo_exportar`, com os parâmetros `metodo` e `posicao`.
+1. Variáveis da camada de dados: `DLV | metodo` e `DLV | posicao`.
+2. Acionador: `CE | curriculo_exportar` (evento personalizado).
+3. Tag: `GA4 | curriculo_exportar`, com os parâmetros `metodo` e `posicao`.
 4. No GA4: marcar `curriculo_exportar` como evento-chave e criar as dimensões personalizadas
    `metodo` e `posicao` (escopo de evento).
 
@@ -41,7 +41,9 @@ Disparado no clique do link **Fale comigo**, antes de abrir o app de e-mail.
 | --- | --- | --- | --- |
 | `canal` | texto | `email` | Canal de contato escolhido |
 
-Ainda sem tag no GTM (planejado como evento-chave).
+**Configuração no GTM** (versão 3, "v2 - contato_clicar"): variável `DLV | canal`, acionador
+`CE | contato_clicar` e tag `GA4 | contato_clicar` com o parâmetro `canal`.
+No GA4: dimensão personalizada `canal` (escopo de evento).
 
 ## Eventos substituídos
 
