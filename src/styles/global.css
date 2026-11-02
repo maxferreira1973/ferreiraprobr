@@ -261,4 +261,14 @@ body {
     color: inherit;
     text-decoration: none;
   }
+
+  /* No PDF não dá para clicar em "Fale comigo": mostra o e-mail montado a partir dos data-*. */
+  #fale-comigo {
+    font-size: 0;
+  }
+
+  #fale-comigo::after {
+    font-size: 1rem;
+    content: attr(data-u) "@" attr(data-d);
+  }
 }
