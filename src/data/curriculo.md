@@ -1,8 +1,7 @@
 # MAXIMILIANO DE JESUS FERREIRA
 
 ## Contato
-- **Endereço:** Rua José Getúlio, 67 ap 125, Liberdade, São Paulo - SP, 01509-001
-- **Telefone:** +55 11 96830-9134
+- **Localização:** São Paulo - SP
 - **E-mail:** max@ferreira.pro.br
 - **LinkedIn:** https://www.linkedin.com/in/maximilianoferreira
 - **Site pessoal:** https://www.ferreira.pro.br
