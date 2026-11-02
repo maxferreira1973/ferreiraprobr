@@ -45,6 +45,29 @@ Disparado no clique do link **Fale comigo**, antes de abrir o app de e-mail.
 `CE | contato_clicar` e tag `GA4 | contato_clicar` com o parâmetro `canal`.
 No GA4: dimensão personalizada `canal` (escopo de evento).
 
+### `consentimento_atualizar`
+
+Disparado quando o visitante clica em **Aceitar** ou **Recusar** no banner de cookies.
+
+| Parâmetro | Tipo | Valores | Descrição |
+| --- | --- | --- | --- |
+| `analytics` | texto | `granted`, `denied` | Escolha para cookies de análise |
+
+## Consent Mode v2 (modo avançado)
+
+Implementado em `src/layouts/Base.astro` (padrão) e `src/components/ConsentBanner.astro` (banner).
+
+1. **Antes do GTM**, `gtag('consent', 'default', …)` define tudo como `denied`, com `wait_for_update: 500`
+   e `ads_data_redaction: true`. O site não tem anúncios: `ad_storage`, `ad_user_data` e
+   `ad_personalization` ficam sempre negados.
+2. Se o visitante já aceitou antes (`localStorage.consentimento_analytics = 'granted'`), um
+   `gtag('consent', 'update', { analytics_storage: 'granted' })` roda logo em seguida, ainda antes do GTM.
+3. O banner aparece enquanto não houver escolha. O clique faz `consent update`, grava a escolha e envia
+   `consentimento_atualizar`. Ao recusar, os cookies `_ga*` existentes são apagados.
+4. O link **Preferências de cookies**, no rodapé, reabre o banner.
+5. Modo avançado: o GTM carrega sempre. Sem consentimento, a tag do Google envia pings sem cookies;
+   as tags do GA4 têm verificação de consentimento integrada, sem acionador extra.
+
 ## Eventos substituídos
 
 | Antigo | Onde estava | Destino |
@@ -54,5 +77,4 @@ No GA4: dimensão personalizada `canal` (escopo de evento).
 
 ## Próximos eventos (planejados)
 
-`perfil_externo_clicar`, `artigo_ler`, `artigo_linkedin_clicar`,
-`consentimento_atualizar` — entram junto com a seção /artigos e o Consent Mode.
+`perfil_externo_clicar`, `artigo_ler`, `artigo_linkedin_clicar` — entram junto com a seção /artigos.

@@ -1,0 +1,71 @@
+---
+// Banner de consentimento (LGPD + Consent Mode v2).
+// Aparece só enquanto o visitante não escolheu. A escolha fica no navegador
+// (localStorage) e pode ser refeita pelo link "Preferências de cookies" do rodapé.
+// Contrato do evento consentimento_atualizar: docs/data-layer.md
+---
+<div id="consentimento" class="consentimento" role="dialog" aria-live="polite" aria-labelledby="consentimento-titulo" hidden>
+  <p id="consentimento-titulo" class="consentimento-titulo">Cookies de análise</p>
+  <p class="consentimento-texto">
+    Uso o Google Analytics para entender como o site é usado, por exemplo quantas pessoas exportam o currículo.
+    Não há anúncios. Você aceita cookies de análise?
+    <a href="/privacidade">Saiba mais</a>
+  </p>
+  <div class="consentimento-botoes">
+    <button type="button" class="btn-secundario" data-consentimento="denied">Recusar</button>
+    <button type="button" class="btn-exportar" data-consentimento="granted">Aceitar</button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var CHAVE = 'consentimento_analytics';
+    var banner = document.getElementById('consentimento');
+    if (!banner) return;
+
+    function lerEscolha() {
+      try {
+        return localStorage.getItem(CHAVE);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // Se a pessoa recusar depois de ter aceitado, remove os cookies _ga já gravados.
+    function apagarCookiesGA() {
+      var dominio = location.hostname.replace(/^www\./, '');
+      document.cookie.split(';').forEach(function (c) {
+        var nome = c.split('=')[0].trim();
+        if (nome.indexOf('_ga') === 0) {
+          var expira = '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          document.cookie = nome + expira;
+          document.cookie = nome + expira + '; domain=.' + dominio;
+        }
+      });
+    }
+
+    function salvar(valor) {
+      try {
+        localStorage.setItem(CHAVE, valor);
+      } catch (e) {}
+      window.gtag('consent', 'update', { analytics_storage: valor });
+      if (valor === 'denied') apagarCookiesGA();
+      window.dataLayer.push({ event: 'consentimento_atualizar', analytics: valor });
+      banner.hidden = true;
+    }
+
+    if (!lerEscolha()) banner.hidden = false;
+
+    banner.querySelectorAll('[data-consentimento]').forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        salvar(botao.getAttribute('data-consentimento'));
+      });
+    });
+
+    document.querySelectorAll('[data-abrir-consentimento]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        banner.hidden = false;
+      });
+    });
+  })();
+</script>

@@ -2,6 +2,7 @@
 // Layout base: tudo que se repete em todas as páginas (cabeçalho HTML, GTM, estilos).
 import '../styles/global.css';
 import { SITE, GTM_ID } from '../config';
+import ConsentBanner from '../components/ConsentBanner.astro';
 
 interface Props {
   titulo?: string;
@@ -27,6 +28,33 @@ const canonical = new URL(Astro.url.pathname, SITE.url).href;
     <meta property="og:description" content={descricao} />
     <meta property="og:url" content={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!--
+      Consent Mode v2 (modo avançado): precisa rodar ANTES do GTM.
+      Tudo começa negado. O site não tem anúncios, então os sinais de anúncio ficam sempre negados;
+      só analytics_storage muda, conforme a escolha feita no banner (guardada no navegador).
+    -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500,
+      });
+      gtag('set', 'ads_data_redaction', true);
+      var escolhaSalva = null;
+      try {
+        escolhaSalva = localStorage.getItem('consentimento_analytics');
+      } catch (e) {}
+      if (escolhaSalva === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    </script>
 
     <!-- Google Tag Manager: carrega o contêiner; o GA4 é configurado dentro do GTM -->
     <script is:inline define:vars={{ GTM_ID }}>
@@ -59,5 +87,13 @@ const canonical = new URL(Astro.url.pathname, SITE.url).href;
         style="display:none;visibility:hidden"></iframe>
     </noscript>
     <slot />
+
+    <footer class="rodape">
+      <a href="/privacidade">Privacidade</a>
+      <span aria-hidden="true">·</span>
+      <button type="button" class="link-botao" data-abrir-consentimento>Preferências de cookies</button>
+    </footer>
+
+    <ConsentBanner />
   </body>
 </html>

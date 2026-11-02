@@ -1,0 +1,54 @@
+---
+// Página de privacidade (rota /privacidade).
+import Base from '../layouts/Base.astro';
+---
+<Base
+  titulo="Privacidade | Maximiliano Ferreira"
+  descricao="Como este site usa cookies de análise e como mudar sua escolha."
+>
+  <main class="container">
+    <div class="topbar">
+      <a class="btn-exportar" href="/">Voltar ao currículo</a>
+    </div>
+
+    <article class="markdown-body">
+      <h1>Privacidade</h1>
+
+      <p>
+        Este é um site pessoal, sem fins comerciais e sem anúncios. Ele não tem formulários e não pede
+        dados como nome ou telefone.
+      </p>
+
+      <h2>O que é medido</h2>
+      <p>
+        Uso o <strong>Google Analytics 4</strong>, carregado pelo Google Tag Manager, para saber quantas
+        pessoas visitam o site, de onde vêm e se exportam o currículo ou entram em contato. Os relatórios
+        são agregados: não identifico visitantes individualmente.
+      </p>
+
+      <h2>Cookies e consentimento</h2>
+      <p>
+        Os cookies de análise (<code>_ga</code> e <code>_ga_*</code>) só são gravados se você clicar em
+        <strong>Aceitar</strong> no aviso de cookies. Se recusar, o Google Analytics recebe apenas sinais
+        anônimos, sem cookies e sem identificador do seu navegador (Consent Mode do Google, modo avançado).
+        Nenhum dado é usado para publicidade.
+      </p>
+
+      <h2>Como mudar sua escolha</h2>
+      <p>
+        Clique em <button type="button" class="link-botao link-destaque" data-abrir-consentimento>Preferências de cookies</button>,
+        no rodapé de qualquer página. Se recusar depois de ter aceitado, os cookies <code>_ga</code> são
+        apagados do seu navegador.
+      </p>
+
+      <h2>Seus direitos</h2>
+      <p>
+        Pela Lei Geral de Proteção de Dados (LGPD), você pode pedir informações sobre o tratamento dos seus
+        dados. Para isso, fale comigo pelo
+        <a href="https://www.linkedin.com/in/maximilianoferreira">LinkedIn</a>.
+      </p>
+
+      <p><em>Responsável: Maximiliano Ferreira.</em></p>
+    </article>
+  </main>
+</Base>
