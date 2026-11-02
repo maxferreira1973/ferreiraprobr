@@ -2,10 +2,8 @@
 
 ## Contato
 - **Localização:** São Paulo - SP
-- **E-mail:** max@ferreira.pro.br
+- **E-mail:** <a href="#contato" id="fale-comigo" data-u="max" data-d="ferreira.pro.br">Fale comigo</a>
 - **LinkedIn:** https://www.linkedin.com/in/maximilianoferreira
-- **Site pessoal:** https://www.ferreira.pro.br
-- **Blog:** https://ferreiraprobr.substack.com
 
 ## Perfil
 **Senior Web Analytics & Marketing Intelligence | GA4 | GTM | BI de Mídia | Instrutor de TI Certificado | 36 anos de Experiência Técnica + Pedagógica**

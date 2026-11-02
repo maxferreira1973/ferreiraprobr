@@ -33,6 +33,16 @@ window.dataLayer.push({
 4. No GA4: marcar `curriculo_exportar` como evento-chave e criar as dimensões personalizadas
    `metodo` e `posicao` (escopo de evento).
 
+### `contato_clicar`
+
+Disparado no clique do link **Fale comigo**, antes de abrir o app de e-mail.
+
+| Parâmetro | Tipo | Valores | Descrição |
+| --- | --- | --- | --- |
+| `canal` | texto | `email` | Canal de contato escolhido |
+
+Ainda sem tag no GTM (planejado como evento-chave).
+
 ## Eventos substituídos
 
 | Antigo | Onde estava | Destino |
@@ -42,5 +52,5 @@ window.dataLayer.push({
 
 ## Próximos eventos (planejados)
 
-`contato_clicar`, `perfil_externo_clicar`, `artigo_ler`, `artigo_linkedin_clicar`,
+`perfil_externo_clicar`, `artigo_ler`, `artigo_linkedin_clicar`,
 `consentimento_atualizar` — entram junto com a seção /artigos e o Consent Mode.

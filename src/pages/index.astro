@@ -29,5 +29,17 @@ import { Content } from '../data/curriculo.md';
       });
       window.print();
     });
+
+    // "Fale comigo": o endereço de e-mail só é montado no clique,
+    // para não ficar escrito no HTML (onde robôs de spam o coletariam).
+    var fale = document.getElementById('fale-comigo');
+    if (fale) {
+      fale.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'contato_clicar', canal: 'email' });
+        window.location.href = 'mailto:' + fale.dataset.u + '@' + fale.dataset.d;
+      });
+    }
   </script>
 </Base>
