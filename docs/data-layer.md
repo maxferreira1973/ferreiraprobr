@@ -77,4 +77,25 @@ Implementado em `src/layouts/Base.astro` (padrão) e `src/components/ConsentBann
 
 ## Próximos eventos (planejados)
 
-`perfil_externo_clicar`, `artigo_ler`, `artigo_linkedin_clicar` — entram junto com a seção /artigos.
+`perfil_externo_clicar` (cliques em LinkedIn/GitHub fora dos artigos).
+
+## Eventos da seção /artigos
+
+Enviados ao dataLayer por `src/pages/artigos/[id].astro`. **Ainda sem tags no GTM.**
+
+### `artigo_ler`
+
+Disparado uma vez por página quando o leitor chega a 75% do texto do artigo.
+
+| Parâmetro | Tipo | Exemplo | Descrição |
+| --- | --- | --- | --- |
+| `artigo_slug` | texto | `gtm-e-google-tag-viram-uma-coisa-so` | Nome do arquivo do artigo |
+| `artigo_tag` | texto | `Google Tag Manager` | Primeira tag do artigo |
+
+### `artigo_linkedin_clicar`
+
+Disparado no clique em "Publicado originalmente no LinkedIn".
+
+| Parâmetro | Tipo | Exemplo | Descrição |
+| --- | --- | --- | --- |
+| `artigo_slug` | texto | `claude-code-ou-n8n-curva-de-aprendizado` | Nome do arquivo do artigo |

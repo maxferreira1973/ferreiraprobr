@@ -8,6 +8,7 @@ e publicado no Vercel (plano Hobby, uso pessoal e não comercial).
 | O quê | Arquivo |
 | --- | --- |
 | Conteúdo do currículo | `src/data/curriculo.md` |
+| Novo artigo (seção /artigos) | um arquivo `.md` em `src/content/artigos/` (campos em `src/content.config.ts`) |
 | Título, descrição e ID do GTM | `src/config.ts` |
 | Visual e layout do PDF (`@media print`) | `src/styles/global.css` |
 | Eventos de analytics | `docs/data-layer.md` |

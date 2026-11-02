@@ -1,0 +1,41 @@
+---
+// Lista de artigos (rota /artigos).
+import Base from '../../layouts/Base.astro';
+import { artigosPublicados, formatarData, tempoDeLeitura } from '../../lib/artigos';
+
+const artigos = await artigosPublicados();
+---
+<Base
+  titulo="Artigos | Maximiliano Ferreira"
+  descricao="Notas e comentários sobre web analytics, GA4, GTM, automação e IA, republicados do LinkedIn."
+>
+  <main class="container">
+    <header class="pagina-cabecalho">
+      <h1>Artigos</h1>
+      <p>Notas e comentários sobre web analytics, GA4, GTM, automação e IA. Publicados primeiro no LinkedIn.</p>
+    </header>
+
+    <ul class="lista-artigos">
+      {
+        artigos.map((artigo) => (
+          <li class="cartao-artigo">
+            <a href={`/artigos/${artigo.id}`}>
+              <p class="artigo-meta">
+                <time datetime={artigo.data.data.toISOString().slice(0, 10)}>{formatarData(artigo.data.data)}</time>
+                {' · '}
+                {tempoDeLeitura(artigo.body)} min de leitura
+              </p>
+              <h2>{artigo.data.titulo}</h2>
+              <p class="artigo-resumo">{artigo.data.resumo}</p>
+            </a>
+            <p class="artigo-tags">
+              {artigo.data.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
