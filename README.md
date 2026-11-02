@@ -12,6 +12,10 @@ e publicado no Vercel (plano Hobby, uso pessoal e não comercial).
 | Visual e layout do PDF (`@media print`) | `src/styles/global.css` |
 | Eventos de analytics | `docs/data-layer.md` |
 
+## Requisitos
+
+Astro 6, que exige Node 22.12 ou superior (definido em `engines` no `package.json`).
+
 ## Rodar localmente
 
 ```bash
