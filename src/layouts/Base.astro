@@ -104,12 +104,9 @@ const secao = Astro.url.pathname.startsWith('/artigos')
       })(window, document, 'script', 'dataLayer', GTM_ID);
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonte local (ver global.css): pré-carrega os pesos usados no topo da página -->
+    <link rel="preload" href="/fontes/inter-regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/fontes/inter-extrabold.woff" as="font" type="font/woff" crossorigin />
   </head>
   <body>
     <noscript>
