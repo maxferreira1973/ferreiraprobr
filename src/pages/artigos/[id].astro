@@ -2,6 +2,7 @@
 // Página de cada artigo (rota /artigos/<id>, onde <id> é o nome do arquivo .md).
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { SITE, PESSOA } from '../../config';
 import { artigosPublicados, formatarData, tempoDeLeitura, type Artigo } from '../../lib/artigos';
 
 export async function getStaticPaths() {
@@ -13,8 +14,29 @@ const { artigo } = Astro.props as { artigo: Artigo };
 const { Content } = await render(artigo);
 const { titulo, resumo, data, linkedin, fonte, tags } = artigo.data;
 const tagPrincipal = tags[0] ?? '';
+const dataIso = data.toISOString().slice(0, 10);
+const url = `${SITE.url}/artigos/${artigo.id}`;
+
+// Dados estruturados do artigo (schema.org/Article), com o artigo comentado em isBasedOn.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: titulo,
+  description: resumo,
+  datePublished: dataIso,
+  inLanguage: 'pt-BR',
+  url,
+  mainEntityOfPage: url,
+  image: `${SITE.url}${SITE.ogImagem}`,
+  keywords: tags.join(', '),
+  author: { '@type': 'Person', '@id': PESSOA['@id'], name: PESSOA.name, url: PESSOA.url },
+  ...(fonte && {
+    isBasedOn: { '@type': 'CreativeWork', name: fonte.titulo, url: fonte.url, inLanguage: fonte.idioma },
+  }),
+  sameAs: linkedin,
+};
 ---
-<Base titulo={`${titulo} | Maximiliano Ferreira`} descricao={resumo}>
+<Base titulo={`${titulo} | Maximiliano Ferreira`} descricao={resumo} ogTipo="article" publicadoEm={dataIso} schema={schema}>
   <main class="container">
     <article class="markdown-body artigo" data-artigo-slug={artigo.id} data-artigo-tag={tagPrincipal}>
       <p class="artigo-meta">

@@ -4,8 +4,19 @@
 // então buscadores, ATS e prévias de link recebem o currículo completo.
 import Base from '../layouts/Base.astro';
 import { Content } from '../data/curriculo.md';
+import { SITE, PESSOA } from '../config';
+
+// Dados estruturados: esta página é o perfil profissional da pessoa.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: `${SITE.url}/`,
+  name: SITE.titulo,
+  inLanguage: 'pt-BR',
+  mainEntity: PESSOA,
+};
 ---
-<Base>
+<Base schema={schema}>
   <!-- O botão vai para o cabeçalho fixo, então continua à mão durante a rolagem -->
   <button slot="acoes" id="exportPdfBtn" class="btn-exportar btn-cabecalho" type="button">Exportar PDF</button>
 
