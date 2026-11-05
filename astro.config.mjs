@@ -8,4 +8,6 @@ export default defineConfig({
   site: 'https://www.ferreira.pro.br',
   output: 'static',
   integrations: [sitemap()],
+  // O CSS (pequeno) vai embutido no HTML: elimina uma requisição que bloqueava a renderização.
+  build: { inlineStylesheets: 'always' },
 });

@@ -1,5 +1,56 @@
 /* Estilos do site. As regras @media print no fim definem o layout do PDF exportado. */
 
+/*
+  Fonte Inter servida pelo próprio site (public/fontes/, licença OFL em LICENCA-INTER.txt).
+  Antes vinha do Google Fonts, que bloqueava a renderização e causava troca de layout (CLS).
+  Os arquivos têm só os caracteres latinos usados em português.
+*/
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fontes/inter-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fontes/inter-medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fontes/inter-semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fontes/inter-bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fontes/inter-extrabold.woff") format("woff");
+}
+
+/* Fonte reserva com as medidas da Inter: enquanto a Inter carrega, o texto já ocupa o mesmo espaço. */
+@font-face {
+  font-family: "Inter Reserva";
+  src: local("Arial");
+  size-adjust: 107.12%;
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+}
+
 :root {
   --bg: #f5f3ef;
   --surface: #ffffff;
@@ -27,7 +78,7 @@ body {
   padding: 32px 16px 48px;
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Inter Reserva", Arial, sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
