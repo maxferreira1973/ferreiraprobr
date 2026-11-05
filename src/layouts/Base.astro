@@ -7,10 +7,23 @@ import ConsentBanner from '../components/ConsentBanner.astro';
 interface Props {
   titulo?: string;
   descricao?: string;
+  // "website" (padrão) ou "article" (páginas de artigo)
+  ogTipo?: 'website' | 'article';
+  // Data de publicação (só para artigos), no formato AAAA-MM-DD
+  publicadoEm?: string;
+  // Dados estruturados (JSON-LD) da página: ajudam o Google e as buscas com IA a entender o conteúdo
+  schema?: Record<string, unknown>;
 }
 
-const { titulo = SITE.titulo, descricao = SITE.descricao } = Astro.props;
+const {
+  titulo = SITE.titulo,
+  descricao = SITE.descricao,
+  ogTipo = 'website',
+  publicadoEm,
+  schema,
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImagem = new URL(SITE.ogImagem, SITE.url).href;
 const secao = Astro.url.pathname.startsWith('/artigos')
   ? 'artigos'
   : Astro.url.pathname === '/'
@@ -27,12 +40,25 @@ const secao = Astro.url.pathname.startsWith('/artigos')
     <link rel="canonical" href={canonical} />
 
     <!-- Prévia de link (LinkedIn, WhatsApp etc.) -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogTipo} />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={SITE.nome} />
     <meta property="og:title" content={titulo} />
     <meta property="og:description" content={descricao} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImagem} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Maximiliano Ferreira, Web Analytics Sênior" />
+    {publicadoEm && <meta property="article:published_time" content={publicadoEm} />}
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Ícones da aba do navegador e da tela inicial do celular -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 
     <!--
       Consent Mode v2 (modo avançado): precisa rodar ANTES do GTM.
