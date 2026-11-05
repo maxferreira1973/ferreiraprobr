@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:caminho*",
+      "has": [{ "type": "host", "value": "ferreiraprobr.vercel.app" }],
+      "destination": "https://www.ferreira.pro.br/:caminho*",
+      "permanent": true
+    }
+  ]
+}
