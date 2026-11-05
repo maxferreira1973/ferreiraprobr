@@ -37,6 +37,7 @@ const secao = Astro.url.pathname.startsWith('/artigos')
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{titulo}</title>
     <meta name="description" content={descricao} />
+    <meta name="author" content={SITE.nome} />
     <link rel="canonical" href={canonical} />
 
     <!-- Prévia de link (LinkedIn, WhatsApp etc.) -->
@@ -51,6 +52,7 @@ const secao = Astro.url.pathname.startsWith('/artigos')
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Maximiliano Ferreira, Web Analytics Sênior" />
     {publicadoEm && <meta property="article:published_time" content={publicadoEm} />}
+    {ogTipo === 'article' && <meta property="article:author" content={SITE.linkedin} />}
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
