@@ -32,17 +32,14 @@
 **Analista Web Analytics III**  
 **maio de 2026 - até o momento · São Paulo**
 
-Atuação em governança de dados e padronização de tracking em ambientes multinacionais.
+Web analytics de um e-commerce de loterias online, com foco em qualidade de dados, funis de compra e mensuração de mídia em GA4 e GA360.
 
-- Estruturei políticas de coleta alinhadas às normas de privacidade.
-- Desenvolvi fluxos de tracking no GA4 e GTM.
-- Reduzi discrepâncias entre plataformas (GA4 e Full Story)
-- Atuei como ponte entre mídia, BI e engenharia de dados.
-- Implementei funis de conversão que permitiram melhorar a acuracidade e aumentar as taxas de conversão em mais de 15% para compras de bolão de loterias e apostas individuais (Faça Seu Jogo).
-- Consolidei dados multicanal em relatórios integrados e executivos.
-- Analisei indicadores como ROAS e CPA para otimização de investimentos.
-- Participei das reuniões iniciais para implementação do MMM (Marketing Mix Modeling) com nosso atual fornecedor de GA360
-- **Ferramentas:** Power BI, Supermetrics, GA4, Google Ads, Meta Ads, LinkedIn Ads, GTM, Consent Mode e Looker Studio.
+- Implementei funis de conversão para compras de bolões e apostas individuais (Faça Seu Jogo), melhorando a acuracidade da mensuração e contribuindo para um aumento de mais de 15% nas taxas de conversão.
+- Investiguei e reduzi discrepâncias de dados entre GA4 e Fullstory, aumentando a confiabilidade dos relatórios de comportamento.
+- Estruturei a coleta de dados no GA4 e no GTM, alinhada ao Consent Mode e às normas de privacidade.
+- Participei da etapa inicial de implementação de Marketing Mix Modeling (MMM) com o fornecedor de GA360.
+- Acompanhei ROAS e CPA das campanhas, consolidando dados multicanal em relatórios executivos para mídia, BI e engenharia de dados.
+- **Ferramentas:** GA4, GA360, GTM, Consent Mode, Fullstory, Power BI, Looker Studio, Supermetrics, Google Ads, Meta Ads e LinkedIn Ads.
 
 ### choreograph
 **Especialista em Web Analytics e Martech**  
