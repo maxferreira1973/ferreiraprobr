@@ -3,8 +3,22 @@
 Contrato entre o site e o Google Tag Manager. O site só envia eventos para o `dataLayer`;
 o GTM decide o que repassar ao GA4. Toda mudança de evento começa por este arquivo.
 
-**Contêiner GTM:** definido em `src/config.ts` (`GTM_ID`).
+**Contêiner GTM:** definido em `src/config.ts` (`GTM_ID`). Versão publicada: **5, "v5 - higiene e consentimento"** (08/11/2026).
 **Convenção de nomes:** português, minúsculas, `_` entre palavras, padrão `objeto_acao`.
+
+## Organização do contêiner (GTM)
+
+| Prefixo | Tipo | Exemplo |
+| --- | --- | --- |
+| `GT \|` | Tag do Google | `GT \| Google Tag (GA4 config)`, acionador Initialization - All Pages |
+| `GA4 \|` | Tag de evento do GA4 | `GA4 \| curriculo_exportar` |
+| `CE \|` | Acionador de evento personalizado | `CE \| curriculo_exportar` |
+| `DLV \|` | Variável da camada de dados | `DLV \| metodo` |
+| `CONST \|` | Constante | `CONST \| GA4 ID` = `G-723EDXBFFS` |
+
+- As tags de evento usam `{{CONST | GA4 ID}}` como ID de medição: trocar de propriedade é uma alteração só.
+- Pastas: **Base** (tag do Google e constantes), **Currículo**, **Artigos**, **Consentimento**.
+- Nome de versão = número da versão (`v5 - …`, `v6 - …`), sempre com descrição do que mudou.
 
 ## Eventos
 
@@ -53,6 +67,14 @@ Disparado quando o visitante clica em **Aceitar** ou **Recusar** no banner de co
 | --- | --- | --- | --- |
 | `analytics` | texto | `granted`, `denied` | Escolha para cookies de análise |
 
+**Configuração no GTM** (versão 5): variável `DLV | analytics`, acionador `CE | consentimento_atualizar`
+e tag `GA4 | consentimento_atualizar` com o parâmetro `analytics`.
+No GA4: dimensão personalizada `analytics` (escopo de evento).
+
+Limitação: só os aceites aparecem nos relatórios. Uma recusa vira ping sem cookies, que o GA4 não
+mostra sem modelagem de consentimento (e o volume do site não basta para a modelagem). Use a contagem
+de `consentimento_atualizar` com `analytics = granted` para acompanhar a taxa de aceite ao longo do tempo.
+
 ## Consent Mode v2 (modo avançado)
 
 Implementado em `src/layouts/Base.astro` (padrão) e `src/components/ConsentBanner.astro` (banner).
@@ -90,7 +112,14 @@ No GA4: dimensões personalizadas `artigo_slug` e `artigo_tag` (escopo de evento
 
 ### `artigo_ler`
 
-Disparado uma vez por página quando o leitor chega a 75% do texto do artigo.
+Disparado uma vez por página quando houver leitura real, ou seja, as três condições ao mesmo tempo:
+
+1. o leitor rolou a página (dispensado quando o artigo inteiro cabe na tela, sem rolagem);
+2. 75% do texto do artigo já passou pela tela;
+3. pelo menos 10 segundos desde a abertura da página.
+
+Antes de 08/11/2026 bastava a condição 2, verificada já no carregamento: em telas altas o evento
+disparava para quem só abria a página. Dados anteriores a essa data superestimam a leitura.
 
 | Parâmetro | Tipo | Exemplo | Descrição |
 | --- | --- | --- | --- |
