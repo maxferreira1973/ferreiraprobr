@@ -80,20 +80,53 @@ const schema = {
       var tag = artigo.getAttribute('data-artigo-tag');
       window.dataLayer = window.dataLayer || [];
 
-      // artigo_ler: leitor chegou a 75% do texto do artigo (uma vez por página).
+      // artigo_ler: leitura real, uma vez por página. Três condições ao mesmo tempo:
+      // 1) o leitor rolou a página (dispensado se o artigo inteiro cabe na tela);
+      // 2) 75% do texto do artigo já passou pela tela;
+      // 3) pelo menos 10 s desde a abertura (abrir e sair não conta como leitura).
+      var TEMPO_MINIMO_MS = 10000;
+      var inicio = Date.now();
+      var rolou = false;
       var enviado = false;
+      var agendado = false;
+
+      function paginaRola() {
+        return document.documentElement.scrollHeight > window.innerHeight + 1;
+      }
+
       function verificarLeitura() {
         if (enviado) return;
+        if (paginaRola() && !rolou) return;
         var r = artigo.getBoundingClientRect();
         var lido = (window.innerHeight - r.top) / r.height;
-        if (lido >= 0.75) {
-          enviado = true;
-          window.dataLayer.push({ event: 'artigo_ler', artigo_slug: slug, artigo_tag: tag });
-          window.removeEventListener('scroll', verificarLeitura);
+        if (lido < 0.75) return;
+        var falta = TEMPO_MINIMO_MS - (Date.now() - inicio);
+        if (falta > 0) {
+          // Chegou cedo demais: confere de novo quando completar o tempo mínimo.
+          if (!agendado) {
+            agendado = true;
+            setTimeout(function () {
+              agendado = false;
+              verificarLeitura();
+            }, falta);
+          }
+          return;
         }
+        enviado = true;
+        window.dataLayer.push({ event: 'artigo_ler', artigo_slug: slug, artigo_tag: tag });
+        window.removeEventListener('scroll', aoRolar);
+        window.removeEventListener('resize', verificarLeitura);
       }
-      window.addEventListener('scroll', verificarLeitura, { passive: true });
-      verificarLeitura();
+
+      function aoRolar() {
+        if (window.scrollY > 0) rolou = true;
+        verificarLeitura();
+      }
+
+      window.addEventListener('scroll', aoRolar, { passive: true });
+      window.addEventListener('resize', verificarLeitura);
+      // Artigo que cabe inteiro na tela não tem rolagem: conta após o tempo mínimo.
+      setTimeout(verificarLeitura, TEMPO_MINIMO_MS);
 
       // artigo_linkedin_clicar: clique no link do post original.
       var link = document.querySelector('[data-artigo-linkedin]');
