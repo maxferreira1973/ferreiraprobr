@@ -15,7 +15,7 @@ const { Content } = await render(artigo);
 const { titulo, resumo, data, linkedin, fonte, tags } = artigo.data;
 const tagPrincipal = tags[0] ?? '';
 const dataIso = data.toISOString().slice(0, 10);
-const url = `${SITE.url}/artigos/${artigo.id}`;
+const url = `${SITE.url}/artigos/${artigo.id}/`;
 
 // Dados estruturados do artigo (schema.org/Article), com o artigo comentado em isBasedOn.
 const schema = {
@@ -40,7 +40,7 @@ const schema = {
   <main class="container">
     <article class="markdown-body artigo" data-artigo-slug={artigo.id} data-artigo-tag={tagPrincipal}>
       <p class="artigo-meta">
-        <a href="/artigos">← Artigos</a>
+        <a href="/artigos/">← Artigos</a>
         {' · '}
         <time datetime={data.toISOString().slice(0, 10)}>{formatarData(data)}</time>
         {' · '}

@@ -22,7 +22,9 @@ const {
   publicadoEm,
   schema,
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, SITE.url).href;
+// Canônica sempre com barra final (padrão do site, ver trailingSlash em astro.config.mjs).
+const caminho = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(caminho, SITE.url).href;
 const ogImagem = new URL(SITE.ogImagem, SITE.url).href;
 const secao = Astro.url.pathname.startsWith('/artigos')
   ? 'artigos'
@@ -123,7 +125,7 @@ const secao = Astro.url.pathname.startsWith('/artigos')
         <a href="/" class="site-nome">Maximiliano Ferreira</a>
         <span class="site-links">
           <a href="/" aria-current={secao === 'curriculo' ? 'page' : undefined}>Currículo</a>
-          <a href="/artigos" aria-current={secao === 'artigos' ? 'page' : undefined}>Artigos</a>
+          <a href="/artigos/" aria-current={secao === 'artigos' ? 'page' : undefined}>Artigos</a>
           <slot name="acoes" />
         </span>
       </nav>
@@ -132,7 +134,7 @@ const secao = Astro.url.pathname.startsWith('/artigos')
     <slot />
 
     <footer class="rodape">
-      <a href="/privacidade">Privacidade</a>
+      <a href="/privacidade/">Privacidade</a>
       <span aria-hidden="true">·</span>
       <button type="button" class="link-botao" data-abrir-consentimento>Preferências de cookies</button>
     </footer>
