@@ -19,7 +19,7 @@ const artigos = await artigosPublicados();
       {
         artigos.map((artigo) => (
           <li class="cartao-artigo">
-            <a href={`/artigos/${artigo.id}`}>
+            <a href={`/artigos/${artigo.id}/`}>
               <p class="artigo-meta">
                 <time datetime={artigo.data.data.toISOString().slice(0, 10)}>{formatarData(artigo.data.data)}</time>
                 {' · '}
