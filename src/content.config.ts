@@ -15,6 +15,8 @@ const artigos = defineCollection({
     linkedin: z.url(),
     // ID do rascunho no Typefully (evita sincronizar o mesmo post duas vezes)
     typefully: z.number().int().optional(),
+    // ID do post no Buffer (posts autorais publicados pelo Buffer)
+    buffer: z.string().optional(),
     // Artigo comentado no post (opcional)
     fonte: z
       .object({
